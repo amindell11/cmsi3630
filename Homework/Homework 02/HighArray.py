@@ -49,17 +49,12 @@ class HighArray():
 
    # noDupes goes here
     def noDupes(self):
-        for x in a:
-            if x not in a:
-                self.a.append(x)
-  #      m = []
-   #     for x in self.a:
-    #        if(x not in m):
-     #           m.append(x)
-      #  self.a.clear()
-       # for x in m:
-        #    self.a.append(x)
-        #return self.a
+        m = []
+        for x in self.a:
+            if(x not in m):
+                m.append(x)
+        self.a = m
+        return self.a
 
 
 
