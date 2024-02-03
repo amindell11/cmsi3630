@@ -6,29 +6,22 @@
 ###
 
 class Card:
+   suits = { "S", "H", "D", "C" }       # spades, hearts, diamonds, clubs
+   ranks = [0, 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 
-   cardSuit = None
-   cardRank = None
-
-   def __init__( self, suit, rank ):
+   def __init__( self, suit, value ):
 #      thisSet = { "?", "?", "?", "?" }      # can also do it with ASCII art
-      thisSet = { "S", "H", "D", "C" }       # spades, hearts, diamonds, clubs
-      myRank = [0, 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
-      if( thisSet.isdisjoint( set( suit ) ) ):
+      if((suit not in Card.suits)):
          print( "   Illegal suit value sent to initializer." )
-      elif( 1 > rank or 13 < rank ):
+      elif( 1 > value or 13 < value ):
          print( "   Illegal card rank sent to initilaizer>" )
       else:
+         self.value = value
          self.cardSuit = suit
-         self.cardRank = myRank[rank]
+         self.cardRank = Card.ranks[value]
 
    def __str__( self ):
       rep = "[{},{}]".format(str(self.cardSuit), str(self.cardRank))
       return rep
-
-# this is for testing, and will be removed later....
-spades = []
-for i in range( 0, 13 ):
-   c = Card( "S", i+1 )
-   spades.append( c )
-   print( "card: ", c )
+   def __repr__(self):
+        return repr((self.value, self.cardSuit, self.cardRank))
