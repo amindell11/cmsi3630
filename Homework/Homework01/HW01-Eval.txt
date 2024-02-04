@@ -1,0 +1,59 @@
+
+Homework01 Evaluation
+======================
+For homework01, the focus is to make sure that your GitHub repository is set
+up and that your Python environment is installed and working properly.  The
+actual programming for the first part of the assignment is trivial, just a
+simple program to display "Hello World!" on the terminal window which was
+done in class anyhow.
+
+Since this is also the in-class assignment for week01, you should have the
+code in at least one or the other of the two places, either classwork01 or
+homework01 [or both].  I will locate it and make sure it appears in both
+locations if it is only in one at no cost.
+
+As a challenge, see if you can modify the 'sayHi.py' program so that it asks
+the user for their name and prints "Hello <name>" instead of "Hello world".
+Then a final challenge is to see if you can use the "sys" module to get the
+name from the command line arguments, and if no argument is provided, then
+ask the user for input.
+
+The second part of this is to make sure you have the directory structure
+[folder hierarchy] set up in your repo.  If this is not correctly done, I
+will fix it for you of course.
+
+Finally, part two of the homework is the first 'real' algorithm we looked at
+as described in class, the 'piSolver.py' program to estimate the value of
+PI using a Monte Carlo Simulation approach.
+
+scores:
+=============================
+Structure for classwork complete    2 out of 2 pts.
+Structure for homework complete     2 out of 2 pts.
+'sayHi.py' program committed        0 out of 4 pts.
+'sayHi.py' program compiles/runs    0 out of 4 pts.
+'piSolver.py' program committed     0 out of 4 pts.
+'piSolver.py' program compiles/runs 0 out of 4 pts.
+
+Total possible score: 20 out of 20 for 100%
+
+Your score: 4 out of 20 which is 10% which is not great.....
+
+=============================
+Comments:
+
+Hmm....
+
+I don't see the 'sayHi.py' or 'piSolver.py' code in either your Homework01
+   or your Classwork01 folders, so I can't really help you there.  You were
+   supposed to have those committed to either of those locations.  I also
+   renamed your directories since many operating systems don't like spaces
+   in file names ~ it may LOOK OK on your system, but when I try to open
+   files in an older version of a different system I'll get an error!  It's
+   better not to use spaces, even if they SEEM to be allowed.  You'll prolly
+   see the difference.
+
+If you put copies of those two files, 'sayHi.py' and 'piSolver.py' in your
+   repo and let me know, I'll update the score, but there will be a lateness
+   penalty ~ better than what's here, though!
+
