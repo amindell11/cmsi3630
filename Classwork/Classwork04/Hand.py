@@ -36,7 +36,9 @@ class Hand:
     def sort(self):
         self.cards.sort(key=lambda card: card.value)
         return HandRankings.HIGH_CARD
-    def isHandHighCard(self):
+    @staticmethod
+    def isHandHighCard(sle):
+        pass
 cards = [Card("S",3),Card("H",1),Card("C",2)]  # Example cards, you need to define the format
 hand = Hand(cards)
 print(hand)
