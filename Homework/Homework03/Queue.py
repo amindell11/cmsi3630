@@ -8,14 +8,15 @@ class Queue:
 
     def insert(self, item):
         if self.rear == self.maxSize - 1:  # deal with wraparound
-            self.rear = -1
-        self.rear += 1
+            self.rear = 0
+        else :
+            self.rear += 1
         self.queArray[self.rear] = item
         self.nItems += 1
 
     def remove(self):
+        temp = self.peekFront()
         self.front += 1
-        temp = self.queArray[self.front]
         if self.front == self.maxSize:
             self.front = 0
         self.nItems -= 1

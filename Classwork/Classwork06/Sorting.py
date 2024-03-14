@@ -9,9 +9,7 @@ class Sortable:
             while( j >= 0 and temp < self.a[j] ):
                 self.a[j+1] = self.a[j]
                 j -= 1
-                print(self.a)
             self.a[j+1] = temp
-            print(self.a)
         return
 def main():
     x = Sortable([1,5,4,6,2])
