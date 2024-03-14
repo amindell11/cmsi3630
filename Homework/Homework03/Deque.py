@@ -37,7 +37,17 @@ class Deque:
    def isEmpty(self):
       return self.item == 0
    def isFull(self):
-      return self.ietms == self.size
+      return self.items == self.size
    
 
 
+deque = Deque(5)
+deque.insertLeft(1)
+deque.insertRight(2)
+deque.insertLeft(3)
+deque.insertRight(4)
+
+print(deque.removeLeft())
+print(deque.removeRight)
+print(deque.isEmpty())
+print(deque.isFull())
