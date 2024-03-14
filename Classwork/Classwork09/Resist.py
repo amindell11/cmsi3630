@@ -1,5 +1,6 @@
 # written by Arye Mindell
 import sys
+from MetricPrefix import prefix_to_value
 
 def main():
     try:
@@ -10,10 +11,13 @@ def main():
         print("Error: Please ensure all arguments are integers.")
 def calcAdmittance(r):
     admit = 0
-    if('k' in r) :
-        r = r.replace('k','')
-        admit = 1/(1000*float(r))
-    else :
-        admit = 1/float(r)
-    return admit
+    n=1
+    for character in r:
+        if(not character.isdigit()):
+            r = r.replace(character,'')
+            n = prefix_to_value(character)
+            break
+    admit = 1/(n*float(r))
+    return admit    
+
 main()
