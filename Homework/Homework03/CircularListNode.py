@@ -1,10 +1,78 @@
-class CircularListNode:
-    def __init__(self, val):
-        self.__init__(self,val)
-    def __init__(self, val, next):
-        self.val = val
-        self.nextNode = next
-    def main():
-        current = CircularListNode(1)
-        current = CircularListNode(2, current)
-    print()
+class Link:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class CircularList:
+    def __init__(self):
+        self.current = None
+
+    def insert(self, data):
+        new_link = Link(data)
+        if self.current is None:
+            self.current = new_link
+            self.current.next = self.current
+        else:
+            new_link.next = self.current.next
+            self.current.next = new_link
+
+    def search(self, data):
+        if self.current is None:
+            return None
+        current_link = self.current
+        while current_link.data != data:
+            current_link = current_link.next
+            if current_link == self.current:
+                return None
+        return current_link
+
+    def delete(self, data):
+        if self.current is None:
+            return
+        prev_link = self.current
+        current_link = self.current.next
+        while current_link.data != data:
+            if current_link == self.current:
+                return
+            prev_link = current_link
+            current_link = current_link.next
+        prev_link.next = current_link.next
+        if current_link == self.current:
+            self.current = prev_link
+
+    def display(self):
+        if self.current is None:
+            return
+        current_link = self.current
+        while True:
+            print(current_link.data, end=" -> ")
+            current_link = current_link.next
+            if current_link == self.current:
+                break
+        print()
+
+    def step(self):
+        if self.current is not None:
+            self.current = self.current.next
+
+
+# Example usage:
+circular_list = CircularList()
+
+# Insertion
+circular_list.insert(1)
+circular_list.insert(2)
+circular_list.insert(3)
+
+# Display
+circular_list.display()  # Output: 1 -> 2 -> 3 ->
+
+# Searching
+print(circular_list.search(2).data)  # Output: 2
+
+# Deletion
+circular_list.delete(2)
+
+# Display after deletion
+circular_list.display()  # Output: 1 -> 3 ->
