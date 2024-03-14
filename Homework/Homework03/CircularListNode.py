@@ -55,24 +55,25 @@ class CircularList:
     def step(self):
         if self.current is not None:
             self.current = self.current.next
+def main():
+        # Example usage:
+    circular_list = CircularList()
+
+    # Insertion
+    circular_list.insert(1)
+    circular_list.insert(2)
+    circular_list.insert(3)
+
+    # Display
+    circular_list.display()  # Output: 1 -> 2 -> 3 ->
+
+    # Searching
+    print(circular_list.search(2).data)  # Output: 2
+
+    # Deletion
+    circular_list.delete(2)
+
+    # Display after deletion
+    circular_list.display()  # Output: 1 -> 3 ->
 
 
-# Example usage:
-circular_list = CircularList()
-
-# Insertion
-circular_list.insert(1)
-circular_list.insert(2)
-circular_list.insert(3)
-
-# Display
-circular_list.display()  # Output: 1 -> 2 -> 3 ->
-
-# Searching
-print(circular_list.search(2).data)  # Output: 2
-
-# Deletion
-circular_list.delete(2)
-
-# Display after deletion
-circular_list.display()  # Output: 1 -> 3 ->
