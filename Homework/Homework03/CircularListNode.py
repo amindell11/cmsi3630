@@ -76,4 +76,8 @@ def main():
     # Display after deletion
     circular_list.display()  # Output: 1 -> 3 ->
 
-
+# I inserted this to get it to run.  You probably used the VSCode
+#  terminal pane to run it, but don't forget I stressed early on
+#  this semester that I won't be running your code that way, that
+#  I use the "real" command line.  So, YOU NEED THIS LINE....  :D
+main()
