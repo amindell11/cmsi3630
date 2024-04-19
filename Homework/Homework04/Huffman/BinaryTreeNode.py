@@ -12,6 +12,7 @@ class BinaryTreeNode:
       self.data  = value
       self.left  = None
       self.right = None
+      self.root = self
 
    # add a child to the node
    def add_child( self, value, child, isNode = False):

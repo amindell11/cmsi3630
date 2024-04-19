@@ -4,7 +4,31 @@ class HuffmanCode:
     def __init__(self, string) :
         self.coded_tree = create_huffman_tree(string)
         self.code_table = generate_code_table(self.coded_tree)
+    def encodeMessage(self,msg):
+        coded_msg = ''
+        for char in msg:
+            try:
+                coded_msg += self.code_table[char]
+            except KeyError:
+                print(f'invalid msg: no code for char {char}')
+                return None
+        return coded_msg
 
+    def decodeMessage(self, msg):
+        decoded_msg = ''
+        current_node = self.coded_tree
+
+        for char in msg:
+            if char == '1':
+                current_node = current_node.right
+            elif char == '0':
+                current_node = current_node.left
+
+            if not current_node.data[0] == '-':
+                decoded_msg += current_node.data[0]
+                current_node = self.coded_tree
+
+        return decoded_msg
 def create_huffman_tree(string):
     chars = []
     freqs = []
@@ -46,9 +70,12 @@ def generate_code_table( root, code='', code_table={}):
     return code_table
 
 def main():
-    code = HuffmanCode("hello")
+    code = HuffmanCode("pee pee poo poo and a lot of big snoottttt")
     print(code.coded_tree._draw_tree())
     print (code.code_table)
+    coded = code.encodeMessage('pee pee poo poo and a lot of big snoottttt')
+    print(coded)
+    print(code.decodeMessage(coded))
 main()
 
     
