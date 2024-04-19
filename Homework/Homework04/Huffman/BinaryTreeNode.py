@@ -14,16 +14,19 @@ class BinaryTreeNode:
       self.right = None
 
    # add a child to the node
-   def add_child( self, value, child ):
-      child = child.upper()
-      if( child == "L"  ):
-         print ("adding to L tree",value)
-         self.left = BinaryTreeNode( value )
-      elif( child == "R" ):
-         print ("adding to R tree",value)
-         self.right = BinaryTreeNode( value )
+   def add_child( self, value, child, isNode = False):
+      if(not isNode):
+         self.add_child(BinaryTreeNode(value),child,True)
       else:
-         raise( "   Illegal Argument Exception..." )
+         child = child.upper()
+         if( child == "L"  ):
+            print ("adding to L tree",value)
+            self.left = value
+         elif( child == "R" ):
+            print ("adding to R tree",value)
+            self.right = value
+         else:
+            raise( "   Illegal Argument Exception..." )
 
    # get one child from this parent node
    def get_child( self, child ):

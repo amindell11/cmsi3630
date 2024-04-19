@@ -1,10 +1,9 @@
 from PriorityQueue import PriorityQueue
 from BinaryTreeNode import BinaryTreeNode
-class HuffmanTree:
-
+class HuffmanCode:
     def __init__(self, string) :
-        self.create_tree(string)
-    def create_tree(self, string):
+        self.coded_tree = self.create_huffman_tree(string)
+    def create_huffman_tree(self, string):
         chars = []
         freqs = []
         for char in string:
@@ -20,17 +19,23 @@ class HuffmanTree:
         while(len(prioq)>1):
             l_node = prioq.dequeue()
             r_node = prioq.dequeue()
+            
+            #print("l node ", l_node._draw_tree())
             sum_freq = l_node.get_data()[1]+r_node.get_data()[1]
-            print(sum_freq)
+            #print(sum_freq)
+            
             new_node = BinaryTreeNode(["-",sum_freq])
-            new_node.add_child(l_node, "L")
-            new_node.add_child(r_node, "R")
-            print(new_node)
-            print("making new node: \n", new_node._draw_tree())
+            new_node.add_child(l_node, "L", True)
+            new_node.add_child(r_node, "R", True)
+            #print(new_node)
+           
+            #print("making new node: \n", new_node._draw_tree())
             prioq.enqueue(new_node,sum_freq)
-        print(prioq.peek()._draw_tree())
+        return prioq.dequeue()
+    
 def main():
-    tree = HuffmanTree("hello")
+    code = HuffmanCode("hello")
+    print(code.coded_tree._draw_tree())
 main()
 
     
