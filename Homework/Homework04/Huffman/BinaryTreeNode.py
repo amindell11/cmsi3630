@@ -53,6 +53,16 @@ class BinaryTreeNode:
       if self.left is not None:
          result += self.left._draw_tree(prefix + ("    " if is_left else "│   "), True)
       return result
+   def __hash__(self):
+      # Calculate hash based on value, left child, and right child
+      return hash((self.val, self.left, self.right))
+
+   def __eq__(self, other):
+      # Check if two nodes are equal by comparing their attributes
+      if isinstance(other, BinaryTreeNode):
+         return self.val == other.val and self.left == other.left and self.right == other.right
+      return False
+   
 root = BinaryTreeNode("[1,0]")
 root.add_child("[1,0]", "L")
 root.add_child("[5,0]", "R")
