@@ -1,6 +1,10 @@
 
+CMSI 3630 ~ Data Structures for Eng
+Spring Semester 2024
+Green, Mindell, and Ude
 Homework03 Evaluation
 ======================
+
 For Queue.py you should have a single ended Queue class with all the methods
 we have discussed in class, including inserting, deleting, and displaying.
 You should also have a 'QueueApp.py' source file that imports your 'Queue.py'
